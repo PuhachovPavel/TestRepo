@@ -26,6 +26,11 @@ public class SearchPage {
     }
 
     public SearchPage findSearchField () {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         webDriver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
         searchField = webDriver.findElement(By.xpath("//app-root/div/div[1]/rz-header/header/div/div/div/form/div/div/input"));
         return this;
