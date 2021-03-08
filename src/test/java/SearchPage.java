@@ -47,6 +47,11 @@ public class SearchPage {
     public void check () {
         webDriver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
         WebElement allResultsTab = webDriver.findElement(By.xpath("//rz-search/rz-catalog/div/div[2]/aside/rz-filter-stack/div[1]/div/div/rz-filter-categories/ul/li[1]/a/span[1]"));
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         assert (allResultsTab.isDisplayed());
         WebElement clearSearchFieldButton = webDriver.findElement(By.xpath("/html/body/app-root/div/div[1]/rz-header/header/div/div/div/form/div/div/button[2]"));
         clearSearchFieldButton.click();
